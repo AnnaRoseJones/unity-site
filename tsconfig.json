@@ -17,10 +17,14 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "sourceMap": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "outDir": "dist",
+    "jsx": "preserve"
   },
   "include": [
-    "src"
+    "src",
+    "HelloWorld/helloworld.ts",
+    "server.tsx"
   ]
 }
