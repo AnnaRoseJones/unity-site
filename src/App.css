@@ -201,23 +201,19 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /*About*/
-/* Base styles - applying more fluid measurements for desktop views */
+
 .about-heading {
   text-align: center;
   margin: 0;
-  padding: 2vw; /* Use viewport width for a responsive padding */
-  font-size: calc(
-    1.5rem + 1vw
-  ); /* Dynamically adjust font size based on screen width */
+  padding: 20px; /* Fixed padding for mobile */
+  font-size: 24px; /* Fixed font size for mobile */
   background-image: radial-gradient(black, white);
 }
 
 .about-unity,
 .text-overlay {
-  padding: 2vw; /* Responsive padding */
-  font-size: calc(
-    14px + 0.5vw
-  ); /* Slightly increase font size as screen widens */
+  padding: 20px;
+  font-size: 16px; /* Readable text size on mobile */
 }
 
 .about-exec img,
@@ -228,97 +224,51 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .about-donate button {
-  font-size: calc(12px + 0.5vw); /* Increase button font size fluidly */
-  padding: 1vw; /* Make padding responsive */
+  font-size: 14px; /* Slightly larger button text for mobile */
+  padding: 12px;
   position: absolute;
-  right: 5%; /* Position button more fluidly instead of a hard-coded value */
+  right: 5%;
   background-color: transparent;
   transition: 0.3s ease-in-out;
 }
 
 .image-list-small {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(20%, 1fr)
-  ); /* Create a more flexible grid */
-  gap: 1rem; /* Use a consistent gap */
-  padding: 1vw;
-}
-
-.image-list-small li {
-  margin: 0 auto; /* Center items */
+  grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
+  gap: 10px;
+  padding: 10px;
 }
 
 .image-list-small li > img {
-  width: 100%; /* Ensure images are fully responsive */
+  width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .about-heading {
-    font-size: 24px; /* Adjust font size for mobile */
-    padding: 20px;
+    padding: 2vw; /* Responsive padding for larger screens */
+    font-size: calc(1.5rem + 1vw); /* Dynamic font size */
   }
 
   .about-unity,
   .text-overlay {
-    padding: 20px;
-    font-size: 16px; /* Ensure text is readable on mobile */
-  }
-
-  .about-exec img,
-  .background-video,
-  .video-background {
-    min-width: unset;
-    min-height: unset;
-  }
-
-  .about-exec {
-    left: 0; /* Adjust alignment for mobile */
-  }
-
-  .aboutvid,
-  .text-overlay {
-    position: relative; /* Adjust if necessary for your layout */
-    z-index: 2; /* Ensure text is above background elements */
-    padding: 20px; /* Adjust padding to ensure text fits well */
-    text-align: center; /* Center text for mobile responsiveness */
-  }
-
-  .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto; /* Adjust height to maintain aspect ratio */
-    z-index: 1; /* Ensure the video stays behind the text */
+    padding: 2vw; /* Responsive padding */
+    font-size: calc(14px + 0.5vw); /* Slightly dynamic font size */
   }
 
   .about-donate button {
-    position: relative; /* Adjust position relative to its container */
-    margin: 0 auto; /* Center button within its container */
-    display: block; /* Ensure it's block level for auto margins to work */
+    font-size: calc(12px + 0.5vw); /* Fluidly increase button font size */
+    padding: 1vw; /* Responsive padding */
   }
 
   .image-list-small {
     grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* Or 1fr for a single column on very small screens */
-    gap: 10px; /* Adjust gap for smaller screens */
-    padding: 10px; /* Adjust padding */
-  }
-
-  .image-list-small li {
-    margin: 5px; /* Smaller margins */
-  }
-
-  .image-list-small li > img {
-    width: 100%; /* Ensure images are fully responsive within their grid item */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the area without losing aspect ratio */
+      auto-fill,
+      minmax(20%, 1fr)
+    ); /* More flexible grid for larger screens */
+    gap: 1rem; /* Consistent gap */
+    padding: 1vw; /* Responsive padding */
   }
 }
 
