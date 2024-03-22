@@ -3,7 +3,7 @@ import Video from "../assets/video/aboutvid.mp4";
 import ExecPhoto from "../assets/img/exec-photo.png";
 import React, { useState, useEffect } from "react";
 
-function useWindowSize() {
+/*function useWindowSize() {
   const [size, setSize] = useState([window.innerWidth, window.innerHeight]);
   useEffect(() => {
     const handleResize = () => {
@@ -13,10 +13,10 @@ function useWindowSize() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return size;
-}
+}*/
 
 export default function About() {
-  const [] = useWindowSize();
+  //const size = useWindowSize();
 
   return (
     <div>
