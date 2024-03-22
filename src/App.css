@@ -201,56 +201,95 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /*About*/
+/* Base styles - applying more fluid measurements for desktop views */
+.about-heading {
+  text-align: center;
+  margin: 0;
+  padding: 2vw; /* Use viewport width for a responsive padding */
+  font-size: calc(
+    1.5rem + 1vw
+  ); /* Dynamically adjust font size based on screen width */
+  background-image: radial-gradient(black, white);
+}
 
-/* Existing CSS above this line */
+.about-unity,
+.text-overlay {
+  padding: 2vw; /* Responsive padding */
+  font-size: calc(
+    14px + 0.5vw
+  ); /* Slightly increase font size as screen widens */
+}
 
+.about-exec img,
+.background-video,
+.video-background {
+  width: 100%;
+  height: auto;
+}
+
+.about-donate button {
+  font-size: calc(12px + 0.5vw); /* Increase button font size fluidly */
+  padding: 1vw; /* Make padding responsive */
+  position: absolute;
+  right: 5%; /* Position button more fluidly instead of a hard-coded value */
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+}
+
+.image-list-small {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(20%, 1fr)
+  ); /* Create a more flexible grid */
+  gap: 1rem; /* Use a consistent gap */
+  padding: 1vw;
+}
+
+.image-list-small li {
+  margin: 0 auto; /* Center items */
+}
+
+.image-list-small li > img {
+  width: 100%; /* Ensure images are fully responsive */
+  height: auto;
+}
+
+/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   .about-heading {
-    font-size: 30px; /* Smaller font size */
-    padding: 20px; /* Less padding */
+    font-size: 24px; /* Adjust font size for mobile */
+    padding: 20px;
   }
 
   .about-unity,
   .text-overlay {
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 16px; /* Smaller text for readability */
+    padding: 20px;
+    font-size: 16px; /* Ensure text is readable on mobile */
   }
 
   .about-exec img,
   .background-video,
   .video-background {
-    width: 100%; /* Full width for images and videos */
-    height: auto; /* Adjust height automatically */
-    min-width: unset; /* Override min-width settings */
-    min-height: unset; /* Override min-height settings */
+    min-width: unset;
+    min-height: unset;
   }
 
   .about-exec {
-    left: 0; /* Adjust alignment */
+    left: 0; /* Adjust alignment for mobile */
   }
 
   .about-donate button {
-    right: 20px; /* Adjust button position */
-    padding: 12px 20px; /* Smaller button */
-    font-size: 14px; /* Smaller font size */
+    right: 20px;
+    padding: 12px 20px; /* Adjust button size for mobile */
   }
 
   .image-list-small {
-    grid-template-columns: repeat(2, 1fr); /* Adjust grid to two columns */
-    max-width: 100%; /* Full width */
-    top: 0; /* Reset position */
-    left: 0; /* Reset position */
+    grid-template-columns: repeat(2, 1fr); /* Simplify grid for mobile */
   }
 
   .image-list-small li {
-    width: auto; /* Adjust width automatically */
-    margin: 0 auto 20px; /* Center items with automatic margins */
-  }
-
-  .image-list-small li > img {
-    width: 100%; /* Full width */
-    height: auto; /* Adjust height automatically */
+    width: auto; /* Adjust item width on mobile */
   }
 }
 

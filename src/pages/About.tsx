@@ -1,9 +1,22 @@
 import PhotoGrid from "../components/PhotoGrid";
 import Video from "../assets/video/aboutvid.mp4";
 import ExecPhoto from "../assets/img/exec-photo.png";
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+function useWindowSize() {
+  const [size, setSize] = useState([window.innerWidth, window.innerHeight]);
+  useEffect(() => {
+    const handleResize = () => {
+      setSize([window.innerWidth, window.innerHeight]);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return size;
+}
 
 export default function About() {
+  const [width, height] = useWindowSize();
   return (
     <div>
       <section>
