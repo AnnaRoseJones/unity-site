@@ -1,7 +1,8 @@
 import PhotoGrid from "../components/PhotoGrid";
 import Video from "../assets/video/aboutvid.mp4";
 import ExecPhoto from "../assets/img/exec-photo.png";
-import React, { useState, useEffect } from "react";
+import React from "react";
+//import React, { useState, useEffect } from "react";
 
 /*function useWindowSize() {
   const [size, setSize] = useState([window.innerWidth, window.innerHeight]);
