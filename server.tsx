@@ -1,14 +1,17 @@
-const express = require("express");
-const router = express.Router();
-const cors = require("cors");
-const nodemailer = require("nodemailer");
+import express from "express";
+import cors from "cors";
+import nodemailer from "nodemailer";
 
-// server used to send send emails
+// server used to send emails
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+const router = express.Router();
 app.use("/", router);
+
 app.listen(5000, () => console.log("Server Running"));
+
 console.log(process.env.EMAIL_USER);
 console.log(process.env.EMAIL_PASS);
 
@@ -50,3 +53,6 @@ router.post("/contact", (req, res) => {
     }
   });
 });
+
+// Add an empty export statement to ensure the file is treated as a module
+export {};
