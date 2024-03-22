@@ -211,11 +211,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-image: radial-gradient(black, white);
 }
 
-.about-unity,
-.aboutvid {
+.about-unity {
   padding: 5vw;
-  background-color: black;
+  background-color: white;
   position: relative;
+  color: black;
+}
+
+.aboutvid {
+  padding: 4vw;
+  position: relative;
+}
+
+p {
+  font-size: calc(1rem + 0.5vw);
 }
 
 .text-overlay {
@@ -269,14 +278,19 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .image-list-small li {
-  display: block; /* inline-block is not necessary with grid */
-  margin: 0 auto; /* Center items if grid column is narrower than 181px */
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  justify-content: center;
+  width: 160px; /* Set fixed width */
+  height: 200px; /* Set fixed height to make space for the image and text */
+  margin: 0 auto 30px; /* Adjust margin as needed */
+  overflow: hidden; /* Hide parts of the image that overflow the container */
 }
 
 .image-list-small li > img {
-  max-width: 100%; /* Ensure images are responsive */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; /* Image takes full width of the container */
+  height: 185px; /* Height adjusts to maintain aspect ratio */
   object-fit: cover;
 }
 
@@ -300,6 +314,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border: 1px solid white;
   padding: 18px 34px;
   font-size: 18px;
+  position: relative;
   background-color: transparent;
   transition: 0.3s ease-in-out;
   align-items: center;
@@ -331,9 +346,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /* Medium screens (tablets) */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .image-list-small {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for tablets and above */
   }
 }
 
@@ -363,15 +378,78 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     font-size: 20px;
   }
 
+  /*.image-list-small {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr); //6 columns for desktops 
+    max-width: 640px; /* Or adjust as needed for your design 
+    width: 75%; /* Adjust if necessary for your layout 
+    top: 0; /* Adjust if needed, but ideally should not need negative positioning 
+    left: 0; /* Adjust to realign as necessary, avoiding negative values if possible 
+  }
+
+  .image-list-small li {
+    display: block; /* inline-block is not necessary with grid 
+    margin: 0 auto; /* Center items if grid column is narrower than the specified width 
+    width: 140px; /* Set a fixed width for the image containers 
+    height: 180px; /* Set a fixed height for the image containers 
+    overflow: hidden; /* Ensures that any oversized images are cropped 
+    position: relative; /* Allows absolute positioning of elements inside 
+  }
+
+  .image-list-small li > img {
+    width: 100%; /* Make the image fill the container width 
+    height: 100%; /* Make the image fill the container height 
+    object-fit: cover; /* Cover the container without losing aspect ratio 
+    align-items: center;
+  } */
   .image-list-small {
-    grid-template-columns: repeat(
-      4,
-      1fr
-    ); /* Increase to 4 columns for desktop */
-    max-width: 640px; /* Or adjust as needed for your design */
-    width: 75%; /* Adjust if necessary for your layout */
-    top: 0; /* Adjust if needed, but ideally should not need negative positioning */
-    left: 0; /* Adjust to realign as necessary, avoiding negative values if possible */
+    grid-template-columns: repeat(4, 1fr); /* Example for larger screens */
+  }
+
+  .image-list-small li {
+    width: 180px; /* Adjust as necessary */
+    height: 250px;
+    margin: 0 auto 30px; /* Increase spacing between rows */
+  }
+
+  .image-list-small li > img {
+    max-height: 300px; /* Adjust as necessary for larger displays */
+  }
+
+  .image-list-small .details {
+    margin-top: 13px;
+    color: #000;
+    vertical-align: bottom;
+  }
+  .image-list-small .details h3 img {
+    color: #303030;
+    text-decoration: none;
+  }
+
+  .image-list-small .details h3 {
+    /* margin: 0; // Remove default margin 
+    white-space: normal; //Override previous nowrap 
+    overflow: visible; //Show all text 
+    text-overflow: clip; //Default clipping 
+    text-align: center;
+    font-size: 18px; 
+    */
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 0 3px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .image-list-small .details .title {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
   }
 }
 
