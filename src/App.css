@@ -206,8 +206,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .about-heading {
   text-align: center;
   margin: 0;
-  padding: 50vw; /* Adjusted for better responsiveness */
-  font-size: calc(1.5rem + 2vw); /* More dynamic scaling */
+  padding: 2rem 5%; /* Adjusted for better responsiveness */
+  font-size: calc(2rem + 3vw); /* More dynamic scaling */
   background-image: radial-gradient(black, white);
 }
 
@@ -262,7 +262,7 @@ p {
   display: block;
   margin: 0 auto;
   width: 80%;
-  max-width: 600px;
+  max-width: 100%;
 }
 
 .image-list-small {
@@ -273,7 +273,7 @@ p {
   grid-template-columns: repeat(2, 1fr); /* Start with 2 columns for mobile */
   grid-gap: 20px;
   width: 90%; /* Adjusted for potentially better mobile fit */
-  height: auto; /* Adjust based on content rather than specifying */
+  /*height: auto; Adjust based on content rather than specifying */
   position: relative;
 }
 
@@ -282,16 +282,18 @@ p {
   flex-direction: column;
   align-items: center; /* Center the content horizontally */
   justify-content: center;
-  width: 160px; /* Set fixed width */
-  height: 200px; /* Set fixed height to make space for the image and text */
+  width: 100%; /* Set fixed width */
+  min-height: 200px;
+  /*height: 200px; Set fixed height to make space for the image and text */
   margin: 0 auto 30px; /* Adjust margin as needed */
   overflow: hidden; /* Hide parts of the image that overflow the container */
 }
 
 .image-list-small li > img {
   width: 100%; /* Image takes full width of the container */
-  height: 185px; /* Height adjusts to maintain aspect ratio */
+  height: auto; /* 185 px Height adjusts to maintain aspect ratio */
   object-fit: cover;
+  aspect-ratio: 3/4;
 }
 
 .image-list-small .details {
