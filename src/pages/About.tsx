@@ -16,7 +16,8 @@ function useWindowSize() {
 }
 
 export default function About() {
-  const [width, height] = useWindowSize();
+  const [] = useWindowSize();
+
   return (
     <div>
       <section>
