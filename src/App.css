@@ -221,7 +221,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .text-overlay {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
+  /* Center content horizontally */
   justify-content: center; /* Adjust if you need vertical centering */
   position: relative;
   width: 100%; /* Ensure it covers the area you want */
@@ -239,7 +239,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   height: 100vh; /* Use viewport height for full height, or adjust as needed */
   object-fit: cover;
   object-position: center; /* Adjust if you want a specific part of the video always visible */
-  z-index: -1; /* Keeps it behind text and other elements */
+  z-index: 1; /* Keeps it behind text and other elements */
 }
 
 .about-exec {
@@ -277,6 +277,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 18px;
   background-color: transparent;
   transition: 0.3s ease-in-out;
+  align-items: center;
   /* Remove any absolute positioning or fixed margins that might conflict */
 }
 
