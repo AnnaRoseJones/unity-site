@@ -206,7 +206,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .about-heading {
   text-align: center;
   margin: 0;
-  padding: 5vw; /* Adjusted for better responsiveness */
+  padding: 50vw; /* Adjusted for better responsiveness */
   font-size: calc(1.5rem + 2vw); /* More dynamic scaling */
   background-image: radial-gradient(black, white);
 }
@@ -219,19 +219,32 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .text-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Adjust if you need vertical centering */
+  position: relative;
+  width: 100%; /* Ensure it covers the area you want */
+  color: white;
+  padding: 2vw;
+  text-align: center; /* Ensure text is centered */
+  z-index: 2; /* Ensure it overlays the video or background */
+}
+
+.background-video {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  color: white;
-  padding: 5vw;
-  text-align: center;
-  z-index: 2;
+  width: 100vw; /* Use viewport width for full width */
+  height: 100vh; /* Use viewport height for full height, or adjust as needed */
+  object-fit: cover;
+  object-position: center; /* Adjust if you want a specific part of the video always visible */
+  z-index: -1; /* Keeps it behind text and other elements */
 }
 
 .about-exec {
   background-color: #fff;
-  text-align: center;
+  position: relative;
   padding: 5vw;
 }
 
@@ -251,9 +264,44 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .image-list-small li > img {
-  width: 100%;
+  width: auto;
   height: auto;
   object-fit: cover;
+}
+
+.about-donate button {
+  font-weight: 700;
+  color: white;
+  border: 1px solid white;
+  padding: 18px 34px;
+  font-size: 18px;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+  /* Remove any absolute positioning or fixed margins that might conflict */
+}
+
+.about-donate button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+.about-donate button span {
+  z-index: 1;
+}
+.about-donate button:hover {
+  color: #121212;
+}
+.about-donate button:hover::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 /* Desktop Enhancements */
