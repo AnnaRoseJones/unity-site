@@ -279,17 +279,46 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     left: 0; /* Adjust alignment for mobile */
   }
 
+  .aboutvid,
+  .text-overlay {
+    position: relative; /* Adjust if necessary for your layout */
+    z-index: 2; /* Ensure text is above background elements */
+    padding: 20px; /* Adjust padding to ensure text fits well */
+    text-align: center; /* Center text for mobile responsiveness */
+  }
+
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* Adjust height to maintain aspect ratio */
+    z-index: 1; /* Ensure the video stays behind the text */
+  }
+
   .about-donate button {
-    right: 20px;
-    padding: 12px 20px; /* Adjust button size for mobile */
+    position: relative; /* Adjust position relative to its container */
+    margin: 0 auto; /* Center button within its container */
+    display: block; /* Ensure it's block level for auto margins to work */
   }
 
   .image-list-small {
-    grid-template-columns: repeat(2, 1fr); /* Simplify grid for mobile */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Or 1fr for a single column on very small screens */
+    gap: 10px; /* Adjust gap for smaller screens */
+    padding: 10px; /* Adjust padding */
   }
 
   .image-list-small li {
-    width: auto; /* Adjust item width on mobile */
+    margin: 5px; /* Smaller margins */
+  }
+
+  .image-list-small li > img {
+    width: 100%; /* Ensure images are fully responsive within their grid item */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area without losing aspect ratio */
   }
 }
 
