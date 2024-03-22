@@ -205,70 +205,68 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .about-heading {
   text-align: center;
   margin: 0;
-  padding: 20px; /* Fixed padding for mobile */
-  font-size: 24px; /* Fixed font size for mobile */
+  padding: 2vw; /* Responsive padding */
+  font-size: calc(1.5rem + 1vw); /* Dynamic font size */
   background-image: radial-gradient(black, white);
+  height: auto; /* Adjust height based on content */
 }
 
 .about-unity,
+.aboutvid {
+  padding: 2vw;
+  background-color: #fff; /* Ensure a white background */
+  position: relative; /* Needed for correct overlay positioning */
+}
+
 .text-overlay {
-  padding: 20px;
-  font-size: 16px; /* Readable text size on mobile */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  padding: 2vw;
+  text-align: center; /* Center text within the overlay */
+  z-index: 2; /* Ensure it overlays the video */
+}
+
+.about-exec {
+  background-color: #fff; /* White background */
+  text-align: center; /* Center the content */
+  padding: 2vw;
 }
 
 .about-exec img,
-.background-video,
-.video-background {
-  width: 100%;
-  height: auto;
-}
-
-.about-donate button {
-  font-size: 14px; /* Slightly larger button text for mobile */
-  padding: 12px;
-  position: absolute;
-  right: 5%;
-  background-color: transparent;
-  transition: 0.3s ease-in-out;
+.PhotoGrid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* Center-align the image */
+  width: 80%; /* Adjust based on your preference */
+  max-width: 600px; /* Maximum size */
 }
 
 .image-list-small {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
-  gap: 10px;
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between grid items */
 }
 
 .image-list-small li > img {
-  width: 100%;
+  width: 100%; /* Responsive images */
   height: auto;
-  object-fit: cover;
+  object-fit: cover; /* Maintain aspect ratio */
 }
 
+/* Desktop Enhancements */
 @media (min-width: 768px) {
-  .about-heading {
-    padding: 2vw; /* Responsive padding for larger screens */
-    font-size: calc(1.5rem + 1vw); /* Dynamic font size */
-  }
-
+  .about-heading,
   .about-unity,
+  .aboutvid {
+    height: auto; /* Adjust height to ensure it matches across sections */
+  }
+
   .text-overlay {
-    padding: 2vw; /* Responsive padding */
-    font-size: calc(14px + 0.5vw); /* Slightly dynamic font size */
-  }
-
-  .about-donate button {
-    font-size: calc(12px + 0.5vw); /* Fluidly increase button font size */
-    padding: 1vw; /* Responsive padding */
-  }
-
-  .image-list-small {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(20%, 1fr)
-    ); /* More flexible grid for larger screens */
-    gap: 1rem; /* Consistent gap */
-    padding: 1vw; /* Responsive padding */
+    text-align: left; /* Align text as per desktop design preference */
   }
 }
 
