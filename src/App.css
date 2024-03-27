@@ -50,6 +50,29 @@ h6 {
   line-height: normal;
 }
 
+/*HomePage CSS*/
+
+.video-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Keep the video behind other elements */
+}
+
+.video-background {
+  /* Cover the whole screen while keeping the aspect ratio */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
 /*NavBar CSS*/
 
 nav.navbar {
@@ -380,39 +403,9 @@ p {
     font-size: 20px;
   }
 
-  /*.image-list-small {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    align-items: center;
-    grid-template-columns: repeat(4, 1fr); //6 columns for desktops 
-    max-width: 640px; /* Or adjust as needed for your design 
-    width: 75%; /* Adjust if necessary for your layout 
-    top: 0; /* Adjust if needed, but ideally should not need negative positioning 
-    left: 0; /* Adjust to realign as necessary, avoiding negative values if possible 
-  }
-
-  .image-list-small li {
-    display: block; /* inline-block is not necessary with grid 
-    margin: 0 auto; /* Center items if grid column is narrower than the specified width 
-    width: 140px; /* Set a fixed width for the image containers 
-    height: 180px; /* Set a fixed height for the image containers 
-    overflow: hidden; /* Ensures that any oversized images are cropped 
-    position: relative; /* Allows absolute positioning of elements inside 
-  }
-
-  .image-list-small li > img {
-    width: 100%; /* Make the image fill the container width 
-    height: 100%; /* Make the image fill the container height 
-    object-fit: cover; /* Cover the container without losing aspect ratio 
-    align-items: center;
-  } */
-  .image-list-small {
-    grid-template-columns: repeat(4, 1fr); /* Example for larger screens */
-  }
-
   .image-list-small li {
     width: 180px; /* Adjust as necessary */
-    height: 250px;
+    height: 300px;
     margin: 0 auto 30px; /* Increase spacing between rows */
   }
 
